@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,10 +21,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::put('/category/{category}', [CategoryController::class, 'update']);
         Route::delete('/category/{category}', [CategoryController::class, 'delete']);
 
-        Route::get('/product', [CategoryController::class, 'index']);
-        Route::get('/product/{product}', [CategoryController::class, 'show']);
-        Route::post('/product', [CategoryController::class, 'store']);
-        Route::put('/product/{product}', [CategoryController::class, 'update']);
-        Route::delete('/product/{product}', [CategoryController::class, 'delete']);
+        Route::get('/news', [NewsController::class, 'index']);
+        Route::get('/news/{news}', [NewsController::class, 'show']);
+        Route::post('/news', [NewsController::class, 'store']);
+        Route::put('/news/{news}', [NewsController::class, 'update']);
+        Route::delete('/news/{news}', [NewsController::class, 'delete']);
     });
 });

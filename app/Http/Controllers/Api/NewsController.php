@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\NewsResource;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,7 @@ class NewsController extends Controller
     {
         $news = News::all();
 
-        return response()->json([
-            'success' => true,
-            'news' => $news,
-        ]);
+        return NewsResource::collection($news);
     }
 
     public function store(Request $request)
