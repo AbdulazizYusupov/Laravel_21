@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Tests\TestController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -28,3 +30,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::delete('/news/{news}', [NewsController::class, 'delete']);
     });
 });
+
+

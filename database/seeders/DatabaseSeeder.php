@@ -24,7 +24,14 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make(123456789),
             'role' => 'admin'
         ]);
-
+        for ($i = 0; $i < 20; $i++) {
+            User::create([
+                'name' => 'User ' . $i,
+                'email' => 'user' . $i . '@gmail.com',
+                'password' => Hash::make(123456789),
+                'role' => 'user'
+            ]);
+        }
         for ($i = 0; $i < 20; $i++) {
             Category::create([
                 'name' => json_encode([
