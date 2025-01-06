@@ -29,4 +29,8 @@ return [
     'email' => 'Email',
     'password' => 'Password',
     'more' => 'More',
+    'login' => 'Login',
+    'Create an account' => 'Create an account',
+    'register' => 'Register account',
+    'already' => 'Already have an account? Login!',
 ];

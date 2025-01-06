@@ -28,19 +28,19 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="title[uz]" required placeholder="Title Uzbek">
+                                <input type="text" class="form-control" name="title[uz]" required placeholder="Sarlavha O'zbek">
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="title[ru]" required placeholder="Title Russian">
+                                <input type="text" class="form-control" name="title[ru]" required placeholder="Заголовок Русский">
                             </div>
                             <div class="mb-3">
                                 <input type="text" class="form-control" name="title[en]" required placeholder="Title English">
                             </div>
                             <div class="mb-3">
-                                <textarea class="form-control" name="description[uz]" required placeholder="Description Uzbek"></textarea>
+                                <textarea class="form-control" name="description[uz]" required placeholder="Tavsif O'zbek"></textarea>
                             </div>
                             <div class="mb-3">
-                                <textarea class="form-control" name="description[ru]" required placeholder="Description Russian"></textarea>
+                                <textarea class="form-control" name="description[ru]" required placeholder="Описание Русский"></textarea>
                             </div>
                             <div class="mb-3">
                                 <textarea class="form-control" name="description[en]" required placeholder="Description English"></textarea>

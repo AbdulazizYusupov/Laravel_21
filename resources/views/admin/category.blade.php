@@ -18,11 +18,11 @@
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="name_uz" class="form-label">{{ __('menu.name') }} (Uzbek)</label>
+                                <label for="name_uz" class="form-label">{{ __('menu.name') }} (O'zbek)</label>
                                 <input type="text" class="form-control" name="name[uz]" required>
                             </div>
                             <div class="mb-3">
-                                <label for="name_ru" class="form-label">{{ __('menu.name') }} (Russian)</label>
+                                <label for="name_ru" class="form-label">{{ __('menu.name') }} (Русский)</label>
                                 <input type="text" class="form-control" name="name[ru]" required>
                             </div>
                             <div class="mb-3">

@@ -30,7 +30,7 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">{{__('menu.Create an account')}}</h1>
                             </div>
                             <form action="{{ route('register') }}" method="post" class="user">
                                 @csrf
@@ -51,12 +51,12 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-user btn-block">
-                                    Register Account
+                                    {{__('menu.register')}}
                                 </button>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="{{ route('index') }}">Already have an account? Login!</a>
+                                <a class="small" href="{{ route('index') }}">{{__('menu.already')}}</a>
                             </div>
                         </div>
                     </div>

@@ -29,4 +29,8 @@ return [
     'email' => 'Elektron pochta',
     'password' => 'Parol',
     'more' => 'Batafsil',
+    'login' => 'Kirish',
+    'register' => 'Ro\'yhatdan o\'tish',
+    'Create an account' => 'Ro\'yhatdan o\'tish',
+    'already' => 'Ro\'yhatdan o\'tganmi',
 ];
