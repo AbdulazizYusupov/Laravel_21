@@ -19,20 +19,40 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="name_uz" class="form-label">{{ __('menu.name') }} (O'zbek)</label>
-                                <input type="text" class="form-control" name="name[uz]" required>
+                                <input type="text" class="form-control" name="name[uz]" {{ old('name[uz]') }}>
                             </div>
+                            @error('name.uz')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="name_ru" class="form-label">{{ __('menu.name') }} (Русский)</label>
-                                <input type="text" class="form-control" name="name[ru]" required>
+                                <input type="text" class="form-control" name="name[ru]" {{ old('name[ru]') }}>
                             </div>
+                            @error('name.ru')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="name_en" class="form-label">{{ __('menu.name') }} (English)</label>
-                                <input type="text" class="form-control" name="name[en]" required>
+                                <input type="text" class="form-control" name="name[en]" {{ old('name[en]') }}>
                             </div>
+                            @error('name.en')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="sort" class="form-label">{{ __('menu.sort') }}</label>
-                                <input type="number" class="form-control" name="sort" required>
+                                <input type="number" class="form-control" name="sort" {{ old('sort') }}>
                             </div>
+                            @error('sort')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('menu.cancel') }}</button>

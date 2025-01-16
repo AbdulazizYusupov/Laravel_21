@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
@@ -26,11 +26,13 @@
     <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon rotate-n-15 mt-4">
+                    <i class="fas fa-spinner fa-spin" style="color: blue; font-size: 2rem;"></i>
+                    <i class="fas fa-sync fa-spin" style="color: blue; font-size: 2rem;"></i>
+                    <i class="fas fa-cog fa-spin" style="color: gray; font-size: 2rem;"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-            </a>
+                <div class="sidebar-brand-text mt-3">SB Admin</div>
+            </a><br>
             <hr class="sidebar-divider my-0">
             <hr class="sidebar-divider">
             <li class="nav-item">
@@ -42,13 +44,13 @@
                         <path fill-rule="evenodd"
                             d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0" />
                     </svg>
-                    <span>{{__('menu.sidebar-1')}}</span>
+                    <span>{{ __('menu.sidebar-1') }}</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('users.index') }}">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>{{__('menu.sidebar-2')}}</span>
+                    <span>{{ __('menu.sidebar-2') }}</span>
                 </a>
             </li>
             <li class="nav-item">

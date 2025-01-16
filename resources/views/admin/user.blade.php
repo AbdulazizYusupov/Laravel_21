@@ -22,19 +22,35 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="name" class="form-label">{{ __('menu.name') }}</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <input type="text" class="form-control" name="name" {{ old('name') }}>
                             </div>
+                            @error('name')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="email" class="form-label">{{ __('menu.email') }}</label>
-                                <input type="email" class="form-control" name="email" required>
+                                <input type="email" class="form-control" name="email" {{ old('email') }}>
                             </div>
+                            @error('email')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="password" class="form-label">{{ __('menu.password') }}</label>
-                                <input type="password" class="form-control" name="password" required>
+                                <input type="password" class="form-control" name="password" {{ old('password') }}>
                             </div>
+                            @error('password')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('menu.cancel') }}</button>
+                            <button type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">{{ __('menu.cancel') }}</button>
                             <button type="submit" class="btn btn-primary">{{ __('menu.save') }}</button>
                         </div>
                     </form>
@@ -70,7 +86,8 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="editModalLabel{{ $model->id }}">{{ __('menu.Edit user') }}</h5>
+                                            <h5 class="modal-title" id="editModalLabel{{ $model->id }}">
+                                                {{ __('menu.Edit user') }}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
@@ -94,7 +111,8 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">{{ __('menu.cancel') }}</button>
-                                                <button type="submit" class="btn btn-primary">{{ __('menu.edit') }}</button>
+                                                <button type="submit"
+                                                    class="btn btn-primary">{{ __('menu.edit') }}</button>
                                             </div>
                                         </form>
                                     </div>
@@ -102,8 +120,7 @@
                             </div>
 
                             <!-- Delete Form -->
-                            <form action="{{ route('users.destroy', $model->id) }}" method="post"
-                                class="d-inline-block">
+                            <form action="{{ route('users.destroy', $model->id) }}" method="post" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger"

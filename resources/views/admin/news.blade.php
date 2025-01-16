@@ -19,7 +19,7 @@
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
-                                <select name="category_id" class="form-control" required>
+                                <select name="category_id" class="form-control" >
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">
                                             {{ is_array($category->name) ? $category->name[session('locale', 'uz')] : json_decode($category->name, true)[session('locale', 'uz')] }}
@@ -27,30 +27,74 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @error('category_id')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="title[uz]" required placeholder="Sarlavha O'zbek">
+                                <input type="text" class="form-control" name="title[uz]" {{ old('title[uz]') }}
+                                    placeholder="Sarlavha O'zbek">
                             </div>
+                            @error('title[uz]')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="title[ru]" required placeholder="Заголовок Русский">
+                                <input type="text" class="form-control" name="title[ru]" {{ old('title[ru]') }}
+                                    placeholder="Заголовок Русский">
                             </div>
+                            @error('title[ru]')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="title[en]" required placeholder="Title English">
+                                <input type="text" class="form-control" name="title[en]" {{ old('title[en]') }}
+                                    placeholder="Title English">
                             </div>
+                            @error('title[en]')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
-                                <textarea class="form-control" name="description[uz]" required placeholder="Tavsif O'zbek"></textarea>
+                                <textarea class="form-control" name="description[uz]" {{ old('description[uz]') }} placeholder="Tavsif O'zbek"></textarea>
                             </div>
+                            @error('description[uz]')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
-                                <textarea class="form-control" name="description[ru]" required placeholder="Описание Русский"></textarea>
+                                <textarea class="form-control" name="description[ru]" {{ old('description[ru]') }} placeholder="Описание Русский"></textarea>
                             </div>
+                            @error('description[ru]')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
-                                <textarea class="form-control" name="description[en]" required placeholder="Description English"></textarea>
+                                <textarea class="form-control" name="description[en]" {{ old('description[en]') }} placeholder="Description English"></textarea>
                             </div>
+                            @error('description[en]')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="mb-3">
                                 <input type="file" class="form-control" name="image">
                             </div>
+                            @error('image')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('menu.cancel') }}</button>
+                            <button type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">{{ __('menu.cancel') }}</button>
                             <button type="submit" class="btn btn-primary">{{ __('menu.save') }}</button>
                         </div>
                     </form>
@@ -105,7 +149,8 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="editModalLabel{{ $newsItem->id }}">{{ __('menu.Edit news') }}</h5>
+                                            <h5 class="modal-title" id="editModalLabel{{ $newsItem->id }}">
+                                                {{ __('menu.Edit news') }}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
@@ -155,7 +200,8 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">{{ __('menu.cancel') }}</button>
-                                                <button type="submit" class="btn btn-primary">{{ __('menu.edit') }}</button>
+                                                <button type="submit"
+                                                    class="btn btn-primary">{{ __('menu.edit') }}</button>
                                             </div>
                                         </form>
                                     </div>
